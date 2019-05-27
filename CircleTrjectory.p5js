@@ -1,0 +1,21 @@
+function setup() {
+  createCanvas(400, 400);
+  background(0);
+
+}
+
+j = 0;
+function draw() {
+  background(0);
+  phi = radians(j);
+  stroke(255, 0, 0);
+  strokeWeight(1);
+  translate(width/2, height/2);
+  for (i=0; i<=360; i+=5){
+    theta = radians(i);
+    r = 200;
+    line(mouseX-width/2, mouseY-height/2, r*cos(theta), r*sin(theta));
+    //line(r/2 * cos(phi), r/2*sin(phi), r*cos(theta), r*sin(theta));
+  }
+  j += 20;
+}
