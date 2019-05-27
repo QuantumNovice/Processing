@@ -1,0 +1,26 @@
+function setup() {
+  createCanvas(400, 400);
+  lines = [];
+  for (i=0; i<400; i+=10){
+  lines[i] = [random(-200, 200), random(-150, 150), random(-150, 150),     random(-200, 200)]
+  }
+}
+
+function draw() {
+  stroke(128, 255, 0);
+  strokeWeight(6)
+  background(0);
+  translate(width/2, height/2);
+  
+  for (i=0; i<400; i+=10){
+    m = 2
+    lines[i][0] += random(-m,m)
+    lines[i][1] += random(-m,m)
+    lines[i][2] += random(-m,m)
+    lines[i][3] += random(-m,m)
+  } 
+  
+  for (i=0; i<400; i+=10){
+    line(lines[i][0], lines[i][1], lines[i][2],lines[i][3])
+  } 
+}
